@@ -8,9 +8,9 @@ group_name = "your_org_name_here"
 token = "your_group_name_here"
 
 #where your files are being copied (make this directory before you run the script)
-backupDirectory = "~/Desktop/backups/github/POCKET-GOPHERS"
+backupDirectory = "/backups/github"
 
-response = HTTParty.get("https://api.github.com/orgs/#{group_name}/repos?page=2&per_page=100",
+response = HTTParty.get("https://api.github.com/orgs/#{group_name}/repos?page=1&per_page=100",
                          :headers => {"User-Agent" => "#{group_name}", "Authorization" => "token #{token}"})
 
 parsed_response = JSON.parse(response.body)
